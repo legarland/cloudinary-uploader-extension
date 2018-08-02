@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Cloudinary Uploader",
+  "version": "0.0.1",
+  "description":
+    "Use this extension to upload images to your cloudinary account with or without transformations.",
+  "author": "Logan Garland",
+  "icons": {
+    "16": "tab-icon-16.png",
+    "48": "tab-icon-48.png",
+    "128": "tab-icon-128.png"
+  },
+  "browser_action": {
+    "default_title": "Configure Cloudinary Settings",
+    "default_icon": "tab-icon-48.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["main.js"]
+  },
+  "permissions": ["contextMenus", "storage"]
+}

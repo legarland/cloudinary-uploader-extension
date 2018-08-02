@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Cloudinary Configuration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="config.js"></script>
+
+  <style type="text/css">
+    body {
+      background-color: #fff;
+    }
+
+    .container {
+      padding: 20px;
+      min-width: 300px;
+    }
+
+    .config-items {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-gap: 20px;
+      align-items: center
+    }
+
+    .config-items label {
+      text-align: right;
+    }
+
+    input {
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h4 style="text-align: center;">Cloudinary Configuration</h4>
+    <div class="config-items">
+      <label>API KEY</label>
+      <input type="text" id="api_key" />
+
+      <label>API SECRET</label>
+      <input type="password" id="api_secret" />
+    </div>
+    <div style="text-align: right; margin-top: 20px;">
+      <button id="saveButton">Save</button>
+    </div>
+  </div>
+</body>
+
+</html>
