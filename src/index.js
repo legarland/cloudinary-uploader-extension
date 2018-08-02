@@ -46,6 +46,11 @@ async function uploadImage(e) {
     cloudinary_api_secret: api_secret
   } = await storage.get(["cloudinary_api_key", "cloudinary_api_secret"]);
 
+  if (!cloudinary_api_key || !cloudinary_api_secret) {
+    alert("Error Uploading Image: Missing API Credentials");
+    return;
+  }
+
   cloudinary.v2.uploader.upload(
     e.srcUrl,
     {
