@@ -43,10 +43,15 @@ chrome.runtime.onInstalled.addListener(function() {
 async function uploadImage(e) {
   const {
     cloudinary_api_key: api_key,
-    cloudinary_api_secret: api_secret
-  } = await storage.get(["cloudinary_api_key", "cloudinary_api_secret"]);
+    cloudinary_api_secret: api_secret,
+    cloud_name
+  } = await storage.get([
+    "cloudinary_api_key",
+    "cloudinary_api_secret",
+    "cloud_name"
+  ]);
 
-  if (!api_key || !api_secret) {
+  if (!api_key || !api_secret || !cloud_name) {
     alert("Error Uploading Image: Missing API Credentials");
     return;
   }
@@ -58,7 +63,7 @@ async function uploadImage(e) {
       width: 480,
       height: 960,
       crop: "limit",
-      cloud_name: "daubcreative",
+      cloud_name,
       api_key,
       api_secret
     },
